@@ -12,6 +12,12 @@ const COARSE=matchMedia('(pointer:coarse)').matches;
 // LITE: phones/tablets and weak CPUs get lighter ambient effects (fewer particles, lower background resolution).
 const LITE=COARSE||(navigator.hardwareConcurrency||8)<=4||(navigator.deviceMemory||8)<=4||/[?&]lite=1/.test(location.search);
 if(LITE)document.documentElement.classList.add('lite');
+// iPhone/iPad (incl. Telegram Mini App WebView, which has a much lower memory limit than Safari)
+const IOS=/iP(hone|ad|od)/.test(navigator.userAgent)||(navigator.platform=='MacIntel'&&navigator.maxTouchPoints>1);
+// crash guard: if the previous launch died right after the first tap, start this one in safe mode (no audio until
+// the sound button is pressed, no feature screen). The flag is cleared once the game has run stably for a few seconds.
+const SAFE=(()=>{try{return localStorage.getItem('pol_boot')=='1'}catch(e){return false}})()||/[?&]safe=1/.test(location.search);
+if(IOS)document.documentElement.classList.add('ios');
 /*SYMIMG*/
 // symbol sprites -> short blob: URLs in CSS variables. Huge data: URIs inside var() made every style recalc slow
 // (hundreds of symbols are created per spin). Images are also pre-decoded so the first spin doesn't hitch.
@@ -420,7 +426,8 @@ function studio(){const S=$('#studio');gsap.set(['#bg','#stage'],{visibility:'hi
  const idle=[gsap.to('#sManeB',{rotation:'+=360',duration:70,repeat:-1,ease:'none',delay:1.7}),gsap.to('#sManeF',{rotation:'-=360',duration:90,repeat:-1,ease:'none',delay:1.7}),
   gsap.to('#sGlow',{scale:1.08,duration:2.4,yoyo:true,repeat:-1,ease:'sine.inOut',delay:1.5})];
  Promise.all([document.fonts?document.fonts.ready:0,new Promise(r=>tl.eventCallback('onComplete',r))]).then(()=>{ready=true;gsap.to('#sBar',{opacity:0,duration:.4});gsap.fromTo('#sTap',{opacity:0},{opacity:1,duration:.4});gsap.to('#sTap',{opacity:.35,duration:.8,yoyo:true,repeat:-1,delay:.4})});
- S.onclick=()=>{if(!ready)return;S.onclick=null;if(COARSE&&FS_OK)goFull(true);const show=()=>{gsap.set(['#bg','#stage'],{visibility:'visible'});BG.start()};if(!COARSE)show();audioInit();applyAudio();gsap.killTweensOf('#sTap');
+ S.onclick=()=>{if(!ready)return;S.onclick=null;try{localStorage.setItem('pol_boot','1')}catch(e){}setTimeout(()=>{try{localStorage.removeItem('pol_boot')}catch(e){}},8000);
+  if(SAFE){st.sfx=st.music=false;st.intro=false}if(COARSE&&FS_OK&&!IOS)goFull(true);const show=()=>{gsap.set(['#bg','#stage'],{visibility:'visible'});BG.start()};if(!COARSE)show();if(!SAFE)audioInit();applyAudio();gsap.killTweensOf('#sTap');
   gsap.to('#sWrap',{scale:1.08,duration:.6,ease:'power2.in'});gsap.to(S,{opacity:0,duration:.6,delay:.1,onComplete:()=>{S.style.display='none';tl.kill();idle.forEach(t=>t.kill());if(!COARSE)stopDust()}});
   const go=()=>{if(st.intro)startIntro();else{introOn=true;gsap.set('#ui',{opacity:0,pointerEvents:'none'});gsap.set('#buy',{opacity:0});goGame()}};
   // phones: don't build the game scene + intro in the same frames as the splash fade / fullscreen resize

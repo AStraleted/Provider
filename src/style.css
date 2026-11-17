@@ -483,3 +483,6 @@ svg{overflow:visible}
 /* phones: smaller intro shade layer, no drop-shadow filters on looping intro animations (GPU memory) */
 .mob #iShade{inset:-500px}
 .lite .isc,.lite .ih1,.lite .glogo .l1,.lite .glogo .l2,.lite .glogo .l2::before{filter:none}
+/* iOS (Telegram WebView): drop the remaining heavy intro effects */
+.ios .iray,.ios #iLogo .lRays{display:none}
+.ios .icard{box-shadow:none}

@@ -9,12 +9,14 @@ function audioInit(){if(A.ctx){if(A.ctx.state=='suspended')A.ctx.resume();return
  try{const C=new(window.AudioContext||window.webkitAudioContext)();A.ctx=C;
   const comp=C.createDynamicsCompressor();comp.threshold.value=-16;comp.knee.value=12;comp.ratio.value=3;comp.attack.value=.004;comp.release.value=.3;
   A.master=C.createGain();A.master.gain.value=.9;A.master.connect(comp);comp.connect(C.destination);
-  A.rev=C.createConvolver();A.rev.buffer=LITE?impulse(C,1.8,2.4):impulse(C,3.4,2.4);const rv=C.createGain();rv.gain.value=.85;A.rev.connect(rv);rv.connect(A.master);
+  // iOS / Telegram WebView: no ConvolverNode (heavy realtime reverb is a known crash/jetsam source there) -> muted send
+  if(IOS){A.rev=C.createGain();A.rev.gain.value=0;A.rev.connect(A.master)}
+  else{A.rev=C.createConvolver();A.rev.buffer=LITE?impulse(C,1.8,2.4):impulse(C,3.4,2.4);const rv=C.createGain();rv.gain.value=.85;A.rev.connect(rv);rv.connect(A.master)}
   A.sfx=C.createGain();A.sfx.connect(A.master);const ss=C.createGain();ss.gain.value=.16;A.sfx.connect(ss);ss.connect(A.rev);
   A.mus=C.createGain();A.mus.connect(A.master);const ms=C.createGain();ms.gain.value=.55;A.mus.connect(ms);ms.connect(A.rev);
   A.duck=C.createGain();A.duck.connect(A.mus);
   A.sfx.gain.value=st.sfx?.62:0;A.mus.gain.value=st.music?.5:0;
-  music.start()}catch(e){console.warn(e)}}
+  if(IOS)setTimeout(()=>{try{music.start()}catch(e){}},1800);else music.start()}catch(e){console.warn(e)}}
 function tone({f=440,t=.15,type='sine',v=.2,a=.004,dst,when=0,slide=0,pan=0}){const C=A.ctx;if(!C)return;const t0=C.currentTime+when,o=C.createOscillator(),g=C.createGain();o.type=type;o.frequency.setValueAtTime(f,t0);if(slide)o.frequency.exponentialRampToValueAtTime(Math.max(20,f*slide),t0+t);
  g.gain.setValueAtTime(0,t0);g.gain.linearRampToValueAtTime(v,t0+a);g.gain.exponentialRampToValueAtTime(.0001,t0+t);o.connect(g);
  if(pan&&C.createStereoPanner){const p=C.createStereoPanner();p.pan.value=pan;g.connect(p);p.connect(dst||A.sfx)}else g.connect(dst||A.sfx);o.start(t0);o.stop(t0+t+.05)}
