@@ -1,0 +1,153 @@
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+ <defs>
+  <linearGradient id="gGold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff7cf"/><stop offset=".3" stop-color="#ffd65a"/><stop offset=".62" stop-color="#e29a1a"/><stop offset="1" stop-color="#a95a07"/></linearGradient>
+  <linearGradient id="gRim" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff3c0"/><stop offset=".25" stop-color="#f1c24f"/><stop offset=".52" stop-color="#9c5c0a"/><stop offset=".78" stop-color="#f6d46a"/><stop offset="1" stop-color="#7d4306"/></linearGradient>
+  <radialGradient id="gMane1" gradientUnits="userSpaceOnUse" cx="120" cy="124" r="116"><stop offset=".35" stop-color="#ffcf4a"/><stop offset=".75" stop-color="#e0780a"/><stop offset="1" stop-color="#9c3f06"/></radialGradient>
+  <radialGradient id="gMane2" gradientUnits="userSpaceOnUse" cx="120" cy="124" r="96"><stop offset=".3" stop-color="#fff1ad"/><stop offset=".7" stop-color="#ffc63a"/><stop offset="1" stop-color="#d4840e"/></radialGradient>
+  <linearGradient id="gFace" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff8d8"/><stop offset=".45" stop-color="#ffd659"/><stop offset="1" stop-color="#ec9a17"/></linearGradient>
+  <radialGradient id="gLapis" cx="50%" cy="32%" r="72%"><stop offset="0" stop-color="#3554c4"/><stop offset=".55" stop-color="#15276e"/><stop offset="1" stop-color="#060c2c"/></radialGradient>
+  <symbol id="iMenu" viewBox="0 0 32 32"><path d="M8 10.5h16M8 16h16M8 21.5h16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
+  <symbol id="iSnd" viewBox="0 0 32 32"><path d="M6.5 12.6h4.3l5.6-4.7v16.2l-5.6-4.7H6.5z" fill="currentColor" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/><g fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"><path d="M20.2 12.4a5 5 0 0 1 0 7.2"/><path d="M23.4 9.3a9.4 9.4 0 0 1 0 13.4"/></g></symbol>
+  <symbol id="iSndOff" viewBox="0 0 32 32"><path d="M6.5 12.6h4.3l5.6-4.7v16.2l-5.6-4.7H6.5z" fill="currentColor" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/><path d="M20.5 12.8l6 6.4M26.5 12.8l-6 6.4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+  <symbol id="iInfo" viewBox="0 0 32 32"><circle cx="16" cy="9.6" r="2" fill="currentColor"/><path d="M13.4 14.2H16.4V23.4M13.2 23.4h6.4" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="iMinus" viewBox="0 0 32 32"><path d="M9 16h14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></symbol>
+  <symbol id="iPlus" viewBox="0 0 32 32"><path d="M9 16h14M16 9v14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></symbol>
+  <symbol id="iTurbo" viewBox="0 0 32 32"><path d="M18.4 4.5 8.6 17.6h6.6l-1.9 9.9 10.1-13.6h-6.7z" fill="currentColor" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></symbol>
+  <symbol id="iAuto" viewBox="0 0 32 32"><path d="M25.2 13.2A9.6 9.6 0 1 0 25.6 18.4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M27.4 8.6l-1.1 6.2-6-1.9z" fill="currentColor"/><path d="M13.6 11.6v8.8l7.2-4.4z" fill="currentColor" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></symbol>
+  <symbol id="iClose" viewBox="0 0 32 32"><path d="M10 10l12 12M22 10 10 22" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/></symbol>
+  <symbol id="iArrL" viewBox="0 0 32 32"><path d="M19 8.5 11.5 16l7.5 7.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="iArrR" viewBox="0 0 32 32"><path d="M13 8.5l7.5 7.5-7.5 7.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="iCheck" viewBox="0 0 32 32"><path d="M8.5 16.5l5 5 10-11" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="iFull" viewBox="0 0 32 32"><path d="M7.5 12.5v-5h5M19.5 7.5h5v5M24.5 19.5v5h-5M12.5 24.5h-5v-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="iSpin" viewBox="0 0 100 100"><g fill="none" stroke="currentColor" stroke-width="8.5" stroke-linecap="round"><path d="M27.5 41.8A24 24 0 0 1 66.6 31.6"/><path d="M72.5 58.2A24 24 0 0 1 33.4 68.4"/></g><g fill="currentColor" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M73.4 22.6 75.6 39.5 59 37.6Z"/><path d="M26.6 77.4 24.4 60.5 41 62.4Z"/></g></symbol>
+ </defs>
+</svg>
+<div id="bg"><div id="bgimg"></div><canvas id="bgc"></canvas><div id="sun"><div id="rays"></div><div id="sunglow"></div></div><div id="birds"></div><div id="leaves"></div><div id="tint"></div><div id="vign"></div></div>
+<div id="stage" class="stage">
+ <div id="mLogo" aria-hidden="true"><i class="mlg"></i><i class="mli"></i><i class="mls s1"></i><i class="mls s2"></i><i class="mls s3"></i></div>
+ <div id="lay"><div id="scene">
+  <div id="sunRays"></div>
+  <div id="reelbg"></div>
+  <div id="reels"></div>
+  <div id="sticky"></div>
+  <div id="fx"></div>
+  <div id="frame"></div>
+  <div id="sunE"><i class="sw1"></i><i class="sd"></i><i class="sfl"></i></div>
+  <div id="sparks"></div>
+  <button id="buy" class="gpanel" aria-label="Купить бесплатные спины"><i class="bIco"></i><span class="b1">КУПИТЬ</span><span class="b2">БЕСПЛАТНЫЕ СПИНЫ</span><span class="bPrice"><span id="buyPrice" class="fit">$40,00</span></span><i class="shw"><i class="shine"></i></i></button>
+  <div id="fsc" class="gpanel off"><span class="f1">БЕСПЛАТНЫЕ СПИНЫ</span><span id="fsN">10</span><span class="f2" id="fsL">ОСТАЛОСЬ</span><i class="fdiv"></i><span class="f3">ВЫИГРЫШ</span><span class="f4"><span id="fsT" class="fit">$0,00</span></span><i class="shw"><i class="shine"></i></i></div>
+  <div id="pollen"></div>
+ </div></div>
+ <div id="ui">
+  <div id="shade"></div>
+  <div id="lgroup">
+   <button class="ib" id="menuBtn" title="Настройки" aria-label="Настройки"><svg><use href="#iMenu"/></svg></button>
+   <button class="ib" id="sndBtn" title="Звук" aria-label="Звук"><svg id="sndIco"><use href="#iSnd"/></svg></button>
+   <button class="ib" id="infoBtn" title="Правила и выплаты" aria-label="Правила"><svg><use href="#iInfo"/></svg></button>
+  </div>
+  <div id="credit"><div class="crow"><span class="lab">КРЕДИТ</span><span class="vb"><span class="val fit" id="bal">$100 000,00</span></span></div><div class="crow" id="betRow" title="Изменить ставку"><span class="lab">СТАВКА</span><span class="vb"><span class="val fit" id="betV">$0,40</span></span></div></div>
+  <div id="brand">SQULED STUDIOS · ДЕМО</div>
+  <div id="msg"><span class="plain">ДЕЛАЙТЕ ВАШИ СТАВКИ!</span></div>
+  <div id="lineinfo"></div>
+  <div id="rgroup">
+   <div class="cap" id="turboW"><button class="ib" id="turbo" title="Скорость спинов" aria-label="Скорость спинов"><svg><use href="#iTurbo"/></svg><i class="dots"><b></b><b></b><b></b></i></button><span>СКОРОСТЬ</span></div>
+   <button class="ib big" id="minus" title="Уменьшить ставку" aria-label="Уменьшить ставку"><svg><use href="#iMinus"/></svg></button>
+   <button id="spin" title="Спин (пробел)" aria-label="Спин"><i class="sring"></i><i class="score"></i><svg class="sarr"><use href="#iSpin"/></svg><i class="sstop"></i></button>
+   <button class="ib big" id="plus" title="Увеличить ставку" aria-label="Увеличить ставку"><svg><use href="#iPlus"/></svg></button>
+   <div class="cap" id="autoW"><button class="ib" id="autoBtn" title="Автоигра" aria-label="Автоигра"><svg><use href="#iAuto"/></svg><b id="autoN"></b></button><span id="autoL">АВТО</span></div>
+  </div>
+ </div>
+</div>
+<div id="veil"></div>
+<div id="top" class="stage">
+ <div id="betPanel" class="modal side">
+  <button class="xbtn" data-close aria-label="Закрыть"><svg><use href="#iClose"/></svg></button>
+  <div class="mt gt" data-t="СТАВКА"><span>СТАВКА</span></div>
+  <div class="msub">Множитель ставки <b>20x</b></div>
+  <div class="rowl">УРОВЕНЬ СТАВКИ</div>
+  <div class="stepper"><button class="ib big" data-st="lvl-"><svg><use href="#iMinus"/></svg></button><div class="v" id="bpLvl">2</div><button class="ib big" data-st="lvl+"><svg><use href="#iPlus"/></svg></button></div>
+  <div class="rowl">НОМИНАЛ МОНЕТЫ</div>
+  <div class="stepper"><button class="ib big" data-st="coin-"><svg><use href="#iMinus"/></svg></button><div class="v" id="bpCoin">$0,01</div><button class="ib big" data-st="coin+"><svg><use href="#iPlus"/></svg></button></div>
+  <div class="rowl">ОБЩАЯ СТАВКА</div>
+  <div class="stepper"><button class="ib big" data-st="tot-"><svg><use href="#iMinus"/></svg></button><div class="v hi"><span id="bpTot" class="fit">$0,40</span></div><button class="ib big" data-st="tot+"><svg><use href="#iPlus"/></svg></button></div>
+  <button class="btn gold" id="maxBet">МАКСИМАЛЬНАЯ СТАВКА</button>
+ </div>
+ <div id="autoPanel" class="modal">
+  <button class="xbtn" data-close aria-label="Закрыть"><svg><use href="#iClose"/></svg></button>
+  <div class="mt gt" data-t="АВТОИГРА"><span>АВТОИГРА</span></div>
+  <div class="msub">Выберите количество автоспинов. Остановить автоигру можно в любой момент кнопкой спина или «Стоп».</div>
+  <div class="agrid" id="agrid"></div>
+  <div class="tgl"><div><b>ТУРБОСПИН</b><small>Максимальная скорость вращения во время автоигры</small></div><button class="sw" id="autoTurbo" aria-label="Турбоспин"></button></div>
+  <button class="btn gold wide" id="autoStart">НАЧАТЬ АВТОИГРУ (10)</button>
+ </div>
+ <div id="setPanel" class="modal">
+  <button class="xbtn" data-close aria-label="Закрыть"><svg><use href="#iClose"/></svg></button>
+  <div class="mt gt" data-t="НАСТРОЙКИ"><span>НАСТРОЙКИ</span></div>
+  <div class="tgl"><div><b>ФОНОВАЯ МУЗЫКА</b><small>Спокойный эмбиент в египетском ладу</small></div><button class="sw" data-set="music" aria-label="Музыка"></button></div>
+  <div class="tgl"><div><b>ЗВУКОВЫЕ ЭФФЕКТЫ</b><small>Звуки барабанов, выигрышей и интерфейса</small></div><button class="sw" data-set="sfx" aria-label="Звуки"></button></div>
+  <div class="tgl"><div><b>ЭКОНОМИЯ БАТАРЕИ</b><small>Отключает живой фон, частицы и часть анимаций</small></div><button class="sw" data-set="battery" aria-label="Экономия батареи"></button></div>
+  <div class="tgl"><div><b>ЗАСТАВКА</b><small>Показывать экран с описанием функций перед игрой</small></div><button class="sw" data-set="intro" aria-label="Заставка"></button></div>
+  <div class="tgl"><div><b>ПОЛНЫЙ ЭКРАН</b><small>Развернуть игру на весь экран</small></div><button class="sw" id="fullSw" aria-label="Полный экран"></button></div>
+ </div>
+ <div id="infoPanel" class="modal">
+  <button class="xbtn" data-close aria-label="Закрыть"><svg><use href="#iClose"/></svg></button>
+  <div id="pages"></div>
+  <div class="pnav"><button class="ib big" id="pPrev" aria-label="Назад"><svg><use href="#iArrL"/></svg></button><div id="pDots"></div><button class="ib big" id="pNext" aria-label="Вперёд"><svg><use href="#iArrR"/></svg></button></div>
+ </div>
+ <div id="buyPanel" class="modal">
+  <button class="xbtn" data-close aria-label="Закрыть"><svg><use href="#iClose"/></svg></button>
+  <div class="byArt"><i class="byRays"></i><i class="byS"></i></div>
+  <div class="mt gt" data-t="КУПИТЬ БЕСПЛАТНЫЕ СПИНЫ"><span>КУПИТЬ БЕСПЛАТНЫЕ СПИНЫ</span></div>
+  <div class="msub">8, 12 или 16 бесплатных спинов с липкими WILD x2 и x3</div>
+  <div class="byPrice"><small>СТОИМОСТЬ</small><span id="byPrice" class="fit">$40,00</span><em id="byNote">100x от ставки $0,40</em></div>
+  <div class="byBet"><span>СТАВКА</span><button class="ib" data-st="tot-" aria-label="Уменьшить ставку"><svg><use href="#iMinus"/></svg></button><b><span id="byBetV" class="fit">$0,40</span></b><button class="ib" data-st="tot+" aria-label="Увеличить ставку"><svg><use href="#iPlus"/></svg></button></div>
+  <div class="byBtns"><button class="btn dark" data-close>ОТМЕНА</button><button class="btn gold" id="buyOk"><span class="fit" id="buyOkT">КУПИТЬ ЗА $40,00</span></button></div>
+  <div class="byWarn" id="byWarn">Недостаточно средств для покупки при этой ставке</div>
+ </div>
+ <div id="pop"><div id="popRays"></div><div class="popbox" id="popBox"></div></div>
+ <div id="big"><div id="bigRays"></div><div id="bigGlow"></div><div id="bigLion"></div><div class="bt gt" id="bigT" data-t="БОЛЬШОЙ ВЫИГРЫШ"><span>БОЛЬШОЙ ВЫИГРЫШ</span></div><div class="bv"><span id="bigV">$0,00</span></div><div class="bskip">НАЖМИТЕ, ЧТОБЫ ПРОПУСТИТЬ</div></div>
+ <div id="toast"></div>
+ <div id="banner" class="gt" data-t=""><span></span></div>
+ <div id="coins"></div>
+ <div id="trans"><i class="tRays"></i><i class="tGlow"></i></div>
+</div>
+<div id="intro" class="stage">
+ <div id="iShade"></div>
+ <div id="iLogo" class="glogo"><i class="lRays"></i><div class="l1">PRIDE OF</div><div class="l2" data-t="LEO"><span>LEO</span></div><div class="l3">SQULED STUDIOS</div></div>
+ <div id="iCards">
+  <div class="icard"><div class="iart a1"><i class="iray"></i><div class="ws w1"></div><div class="ws w2"></div></div><div class="ih">WILD С МНОЖИТЕЛЕМ</div><div class="itx">WILD на барабанах 2–5 получает множитель <b>x2</b> или <b>x3</b>. В бесплатных спинах WILD <b>залипают</b> до конца раунда.</div></div>
+  <div class="icard"><div class="iart a2"><i class="iray"></i><i class="isc"></i><div class="itags"><span>3 → <b>8</b></span><span>4 → <b>12</b></span><span>5 → <b>16</b></span></div></div><div class="ih">БЕСПЛАТНЫЕ СПИНЫ</div><div class="itx">3, 4 или 5 символов <b>SCATTER</b> в любом месте дают <b>8, 12 или 16</b> бесплатных спинов.</div></div>
+  <div class="icard"><div class="iart a3"><i class="iray"></i><i class="ih1"></i><div class="imax gt" data-t="5 000x"><span>5 000x</span></div></div><div class="ih">ДО 5 000x СТАВКИ</div><div class="itx">Купите бонус за <b>100x</b> ставки в любой момент базовой игры. Максимальный выигрыш — <b>5 000x</b>.</div></div>
+ </div>
+ <button id="iPlay" class="btn gold xl">ИГРАТЬ</button>
+ <div id="iChk" role="checkbox" aria-checked="false"><i id="iBox"><svg><use href="#iCheck"/></svg></i>НЕ ПОКАЗЫВАТЬ В СЛЕДУЮЩИЙ РАЗ</div>
+ <div id="iNote">Демонстрационный прототип · игра на виртуальные кредиты</div>
+</div>
+<div id="studio">
+ <canvas id="dust"></canvas>
+ <div id="sGlow"></div>
+ <div id="sWrap">
+  <div id="sLogo" aria-hidden="true"><svg viewBox="0 0 240 240" class="sl" id="sManeB"></svg><svg viewBox="0 0 240 240" class="sl" id="sManeF"></svg><svg viewBox="0 0 240 240" class="sl" id="sFaceW">
+   
+   <circle cx="120" cy="124" r="66" fill="none" stroke="url(#gRim)" stroke-width="5"/>
+   <g id="sFace">
+    <circle cx="89" cy="76" r="13" fill="url(#gFace)" stroke="#5a2a04" stroke-width="2.4"/><circle cx="151" cy="76" r="13" fill="url(#gFace)" stroke="#5a2a04" stroke-width="2.4"/>
+    <circle cx="89" cy="77" r="6" fill="#7a3a06"/><circle cx="151" cy="77" r="6" fill="#7a3a06"/>
+    <path d="M120 64C138 64 152 72 158 88L163 111 156 117 162 127 152 135 156 146 142 156C136 170 128 180 120 182 112 180 104 170 98 156L84 146 88 135 78 127 84 117 77 111 82 88C88 72 102 64 120 64Z" fill="url(#gFace)" stroke="#5a2a04" stroke-width="2.6" stroke-linejoin="round"/>
+    <path d="M120 70 127 124 120 131 113 124Z" fill="#fffbe6" opacity=".55"/>
+    <path d="M95 103Q107 94 117 103M145 103Q133 94 123 103" fill="none" stroke="#4a2003" stroke-width="3.4" stroke-linecap="round"/>
+    <path d="M97 112Q107 104 116 112Q107 117 97 112ZM143 112Q133 104 124 112Q133 117 143 112Z" fill="#2a1002"/>
+    <circle cx="109" cy="110.5" r="1.6" fill="#ffe9a0"/><circle cx="131" cy="110.5" r="1.6" fill="#ffe9a0"/>
+    <ellipse cx="120" cy="150" rx="23" ry="15" fill="#fff3cf" stroke="#c98a20" stroke-width="1.2"/>
+    <path d="M109 132H131L120 144Z" fill="#3a1602" stroke="#3a1602" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M120 144V151M120 151Q113 158 105 153M120 151Q127 158 135 153" fill="none" stroke="#3a1602" stroke-width="2.8" stroke-linecap="round"/>
+    <path d="M112 168 120 179 128 168" fill="none" stroke="#a5600a" stroke-width="2.2" stroke-linejoin="round"/>
+   </g>
+  </svg></div>
+  <div id="sName" data-t="SQULED"><span>SQULED</span></div>
+  <div id="sSub">STUDIOS</div>
+  <i id="sFlare"></i>
+ </div>
+ <div id="sBar"><i></i></div>
+ <div id="sTap">НАЖМИТЕ, ЧТОБЫ ПРОДОЛЖИТЬ</div>
+</div>
