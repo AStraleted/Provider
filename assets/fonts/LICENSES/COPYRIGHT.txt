@@ -1,0 +1,8 @@
+All fonts below are licensed under the SIL Open Font License, Version 1.1. See OFL-1.1.txt.
+
+Cinzel Decorative: Copyright © 2012 Natanael Gama (info@ndiscovered.com), with Reserved Font Name 'Cinzel'. The embedded TTF files are unmodified.
+Alegreya SC: Copyright 2011 The Alegreya Project Authors (https://github.com/huertatipografica/Alegreya).
+Oswald: Copyright 2016 The Oswald Project Authors (https://github.com/googlefonts/OswaldFont).
+Montserrat: Copyright 2011 The Montserrat Project Authors (https://github.com/JulietaUla/Montserrat).
+
+Alegreya SC, Oswald and Montserrat WOFF files have been subset for offline embedding. The original TTF files are in ../src/.
